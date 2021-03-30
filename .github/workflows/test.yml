@@ -1,0 +1,23 @@
+name: "test"
+
+on:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test
+        run: 'curl -H "Authorization: bearer $GITHUB_TOKEN" -X PUT "https://api.github.com/repos/$REPO/contents/test.md" --data ''{"message": "Create test.md", "content": "test"}'' '
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+
+  test2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test
+        run: 'curl -H "Authorization: bearer $GITHUB_TOKEN" "https://api.github.com/repos/tyage-test/private/contents/README.md" '
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
