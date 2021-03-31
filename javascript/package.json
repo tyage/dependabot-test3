@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "hot-formula-parser": "git+https://github.com.mocos.kitchen/github.com/a/a#semver:aaa",
+    "hot-formula-parser": "git+https://github.com.mocos.kitchen/github.com/user/repo#semver:aaa",
     "lodash": "^4.17.20"
   }
 }
