@@ -2,7 +2,7 @@
 
 After the preparation, you can see your dependabot result from <https://github.com/tyage/dependabot-test4/network/updates>
 
-## Prepare GitHub registry
+## Prepare GitHub Repository
 
 Add following files:
 
