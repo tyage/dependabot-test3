@@ -1,5 +1,7 @@
 # PoC for dependabot RCE
 
+After the preparation, you can see your dependabot result from <https://github.com/tyage/dependabot-test4/network/updates>
+
 ## Prepare GitHub registry
 
 Add following files:
@@ -38,7 +40,7 @@ registry="http://registry.npmjs.org@mocos.kitchen/registry"
 }
 ```
 
-`.github/dependabot.yml`
+`.github/dependabot.yml` (add this file after you prepared the servers!)
 ```
 ---
 version: 2
