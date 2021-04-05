@@ -1,6 +1,8 @@
 # PoC for dependabot RCE
 
-After the preparation, you can see your dependabot result from <https://github.com/tyage/dependabot-test4/network/updates>
+Please replace `mocos.ktichen` to your own server.
+
+After the preparation, you can see your dependabot result from `https://github.com/<USER>/<REPO>/network/updates`
 
 ## Prepare GitHub Repository
 
